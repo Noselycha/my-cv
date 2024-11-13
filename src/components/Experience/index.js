@@ -88,7 +88,7 @@ function Experience() {
                 />
                 <div>
                   <h3>React JS</h3>
-                  <p>Intermediate</p>
+                  <p>Basic</p>
                 </div>
               </article>
             </div>

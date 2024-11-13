@@ -12,11 +12,13 @@ const Projects = () => {
             <div className="article-container">
               <img
                 src="./images/project1.png"
-                alt="Project 1"
+                alt="Project 2"
                 className="project-img"
               />
             </div>
-            <h2 className="experience-sub-title project-title">Project One</h2>
+            <h2 className="experience-sub-title project-title">
+              Car Dealer Website
+            </h2>
             <p>
               A car buying and selling website designed to ease the user
               experience for buyers and sellers. The website features vehicle
@@ -31,7 +33,9 @@ const Projects = () => {
                 className="project-img"
               />
             </div>
-            <h2 className="experience-sub-title project-title">Project Two</h2>
+            <h2 className="experience-sub-title project-title">
+              Dukcapil Minut App
+            </h2>
             <p>
               Designed a website for Dukcapil Minahasa Utara in Figma with the
               aim of facilitating access to information and online services.
@@ -49,7 +53,7 @@ const Projects = () => {
               />
             </div>
             <h2 className="experience-sub-title project-title">
-              Project Three
+              Village Dean App
             </h2>
             <p>
               My team and I designed a website interface to support various
