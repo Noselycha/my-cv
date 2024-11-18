@@ -1,11 +1,24 @@
 // src/components/Projects.js
 import React from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
+import { useEffect, useState } from "react";
+function Projects() {
+  const [project, setProject] = useState({});
 
-const Projects = () => {
+  useEffect(() => {
+    const db = getDatabase();
+    const projectRef = ref(db, "project");
+
+    onValue(projectRef, (snapshot) => {
+      const data = snapshot.val();
+      setProject(data);
+    });
+  }, []);
+
   return (
     <section id="projects">
       <p className="section__text__p1">Browse My Recent</p>
-      <h1 className="title">Projects</h1>
+      <h1 className="title">{project.title}</h1>
       <div className="experience-details-container">
         <div className="about-containers">
           <div className="details-container color-container">
@@ -17,13 +30,9 @@ const Projects = () => {
               />
             </div>
             <h2 className="experience-sub-title project-title">
-              Car Dealer Website
+              {project.subtilte1}
             </h2>
-            <p>
-              A car buying and selling website designed to ease the user
-              experience for buyers and sellers. The website features vehicle
-              ads with full descriptions, images and prices.
-            </p>
+            <p>{project.desc1}</p>
           </div>
           <div className="details-container color-container">
             <div className="article-container">
@@ -34,15 +43,9 @@ const Projects = () => {
               />
             </div>
             <h2 className="experience-sub-title project-title">
-              Dukcapil Minut App
+              {project.subtilte2}
             </h2>
-            <p>
-              Designed a website for Dukcapil Minahasa Utara in Figma with the
-              aim of facilitating access to information and online services.
-              This design allows users to see information on the files that must
-              be brought when visiting the office, as well as providing online
-              document processing features.
-            </p>
+            <p>{project.desc2}</p>
           </div>
           <div className="details-container color-container">
             <div className="article-container">
@@ -53,14 +56,9 @@ const Projects = () => {
               />
             </div>
             <h2 className="experience-sub-title project-title">
-              Village Dean App
+              {project.subtilte3}
             </h2>
-            <p>
-              My team and I designed a website interface to support various
-              administrative needs, such as absence scanning, file registration,
-              points management, as well as the delivery of information from the
-              village dean and sitting information.
-            </p>
+            <p>{project.desc3}</p>
           </div>
         </div>
       </div>
@@ -72,6 +70,6 @@ const Projects = () => {
       />
     </section>
   );
-};
+}
 
 export default Projects;

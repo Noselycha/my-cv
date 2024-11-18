@@ -1,11 +1,24 @@
 // src/components/Contact.js
 import React from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
+import { useEffect, useState } from "react";
+function Contact() {
+  const [contact, setContact] = useState({});
 
-const Contact = () => {
+  useEffect(() => {
+    const db = getDatabase();
+    const contactRef = ref(db, "contact");
+
+    onValue(contactRef, (snapshot) => {
+      const data = snapshot.val();
+      setContact(data);
+    });
+  }, []);
+
   return (
     <section id="contact">
       <p className="section__text__p1">Get in Touch</p>
-      <h1 className="title">Contact Me</h1>
+      <h1 className="title">{contact.title}</h1>
       <div className="contact-info-upper-container">
         <div className="contact-info-container">
           <img
@@ -42,6 +55,6 @@ const Contact = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Contact;

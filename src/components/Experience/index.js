@@ -18,7 +18,7 @@ function Experience() {
   return (
     <section id="experience">
       <p className="section__text__p1">Explore My</p>
-      <h1 className="title">Experience</h1>
+      <h1 className="title">{experience.title}</h1>
       <div className="experience-details-container">
         <div className="about-containers">
           <div className="details-container">

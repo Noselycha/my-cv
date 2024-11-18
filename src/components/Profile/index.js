@@ -17,7 +17,11 @@ function Profile() {
   return (
     <section id="profile">
       <div className="section__pic-container">
-        <img src={`data:image/png;base64, ${profile.image}`} alt="Lika" />
+        <img
+          src="./images/likaprofile3.png"
+          alt="Profile picture"
+          className="about-pic"
+        />
       </div>
       <div className="section__text">
         <p className="section__text__p1">{profile.subtitle}</p>
