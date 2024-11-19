@@ -18,7 +18,7 @@ function Profile() {
     <section id="profile">
       <div className="section__pic-container">
         <img
-          src="./images/likaprofile3.png"
+          src={`data:images/png;base64, ${profile.image}`}
           alt="Profile picture"
           className="about-pic"
         />

@@ -21,7 +21,7 @@ function About() {
       <div className="section-container">
         <div className="section__pic-container">
           <img
-            src="./images/likaprofile.jpg"
+            src={`data:images/jpg;base64, ${about.image}`}
             alt="Profile picture"
             className="about-pic"
           />
